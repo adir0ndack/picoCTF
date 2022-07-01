@@ -11,6 +11,7 @@ $ file dolls.jpg
 dolls.jpg: PNG image data, 594 x 1104, 8-bit/color RGBA, non-interlaced
 ```
 
+Let's see if there is anything else hidden about this image. 
 Use `binwalk` to quickly extract embedded files.
 
 ```bash
