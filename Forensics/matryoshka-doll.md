@@ -14,6 +14,7 @@ dolls.jpg: PNG image data, 594 x 1104, 8-bit/color RGBA, non-interlaced
 Let's see if there is anything else hidden about this image. 
 Use `binwalk` to quickly extract embedded files.
 
+
 ```bash
 $ binwalk -e dolls.jpg
 
@@ -30,6 +31,9 @@ Notice that there was an embedded .zip file - you can move to the extracted dire
 Run `ls` and then `cd` to the directory 'base_images' - there is another image inside, called '2_c.jpg'.
 
 Use `binwalk -e` on this image as well, and then `cd` into the newly extracted directory to find yet another image, '3_c.jpg'.
+
+> Note: you can run binwalk with the -M argument (literally for Matryoshka) to recursively scan all files and skip the repetition of these steps, e.g. `binwalk -eM dolls.jpg`
+
 
 Repeat this process until you finally reach 'flag.txt'. Run `cat` on it to reveal the flag.
 
